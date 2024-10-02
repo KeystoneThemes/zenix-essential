@@ -1,0 +1,246 @@
+.wdb-separator {
+    position: relative;
+}
+
+.wdb-separator::after {
+    content: attr(data-separator);
+    display: inline-block;
+    margin-inline-start: 12px;
+    font-size: 16px;
+}
+
+.wdb--meta-list {
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wdb--meta-list svg {
+    width: 1em;
+    height: 1em;
+}
+
+.wdb--meta-list path {
+    transition: all 0.3s;
+}
+
+.wdb--category-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wdb--category-list {
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.wdb--category-list li:last-child::after {
+    display: none;
+}
+
+.wdb--meta-list .wdb-btn-default {
+    padding: 0;
+    border: none;
+}
+
+/* Style 1 */
+.wdb--meta-list.style-1 li,
+.wdb--meta-list.style-1 li a {
+    color: #1C1D20;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.wdb--meta-list.style-1 li a:hover {
+    color: #f0b849;
+}
+
+.wdb--meta-list li {
+    display: flex;
+    align-items: center;
+}
+
+.wdb--meta-list.style-1 i,
+.wdb--meta-list.style-1 svg {
+    margin-inline-end: 3px;
+}
+
+
+/* Style 2 */
+.wdb--meta-list.style-2 {
+    gap: 10px 50px;
+    align-items: center;
+}
+
+.wdb--meta-list.style-2 > li {
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+}
+
+.wdb--meta-list.style-2 > li::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: #EFEFEF;
+    inset-inline-end: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.wdb--meta-list.style-2 > li:last-child::after {
+    display: none;
+}
+
+.wdb--meta-list.style-2 .wdb--author-wrap {
+    flex-direction: row;
+    align-items: center;
+}
+
+.wdb--meta-list.style-2 .wdb-author-img {
+    margin-inline-end: 15px;
+}
+
+.wdb--meta-list.style-2 li .label {
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.wdb--meta-date,
+.wdb--meta-view,
+.wdb--meta-list.style-2 li a {
+    color: #1C1D20;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-transform: capitalize;
+}
+.wdb--meta-list.style-2 li a:hover {
+    color: #f0b849;
+}
+.wdb--meta-list.style-2 .wdb-author-img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.wdb--meta-list.style-2 .wdb--meta-view {
+    display:flex;
+}
+
+/* Post Tags */
+
+.wdb--post-tags {
+    gap: 6px 12px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .wdb--post-tags li {
+    position: relative;
+  }
+  
+  .wdb--post-tags li::after {
+    content: attr(data-separator);
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    inset-inline-end: -5px;
+  }
+  
+  .wdb--post-tags li:last-child::after {
+    display: none;
+  }
+  
+  .wdb--post-tags li a {
+    display: inline-block;
+    text-transform: capitalize;
+    transition: all 0.3s;
+    font-weight: 500;
+    border: none;
+    padding: 0;
+  }
+  
+  .wdb--post-tags li a:hover {
+    color: #f0b849;
+  }
+  
+  /* Posts Paginate */
+  
+  .wdb--post-paginate {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+.wdb--post-paginate svg {
+    width: 1em;
+    height: 1em;
+}
+
+.wdb--post-paginate a {
+    color: #1C1D20;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.wdb--post-paginate a:hover {
+    color: #E8BF96;
+}
+
+.wdb--post-paginate a:hover svg {
+    fill: #E8BF96;
+    transition: all 0.3s;
+}
+
+.wdb--post-paginate a .next-prev {
+    gap: 10px;
+    align-items: center;
+    display: inline-flex;
+}
+
+.wdb--post-paginate .title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    word-break: break-word;
+    transition: all 0.3s;
+}
+
+.wdb--post-paginate .post-next {
+    text-align: end;
+}
+
+.layout-2.wdb--post-paginate a {  
+    display: flex;
+    border: 1px solid;
+    height: 200px;
+    width: 200px;
+    align-items: center;
+    border-radius: 100%;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .wdb--post-paginate {
+        grid-template-columns: 1fr;
+    }
+
+    .wdb--post-paginate .post-next {
+        text-align: start;
+    }
+
+}
